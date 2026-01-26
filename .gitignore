@@ -1,0 +1,33 @@
+# Python virtual env
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# OS / editor noise
+.DS_Store
+.vscode/
+.idea/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local env secrets
+.env
+.env.*
+
+# Data files (keep your real dataset out of git)
+*.csv
+*.tsv
+*.parquet
+*.jsonl
+data/
+datasets/
+
+# Build artifacts
+dist/
+build/
