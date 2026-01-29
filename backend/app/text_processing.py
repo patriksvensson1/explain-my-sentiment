@@ -1,9 +1,9 @@
-import sentiment_model as smodel
 import numpy as np
 import shap
 import torch
 from scipy.special import softmax
 from typing import List
+from app import sentiment_model as smodel
 
 # Sentiment labels
 LABELS = ["negative", "neutral", "positive"]
@@ -14,7 +14,7 @@ def get_shap_explainer():
     global _SHAP_EXPLAINER
     if _SHAP_EXPLAINER is None:
         masker = shap.maskers.Text(smodel.tokenizer)
-        _SHAP_EXPLAINER = shap.Explainer(roberta_predict_probabilities,masker,output_names=LABELS)
+        _SHAP_EXPLAINER = shap.Explainer(roberta_predict_probabilities, masker, output_names=LABELS)
     return _SHAP_EXPLAINER
 
 
@@ -27,7 +27,6 @@ def roberta_chunk_text(text: str, max_tokens_per_chunk: int = 450) -> List[str]:
         chunks.append(smodel.tokenizer.decode(chunk_ids))
     return chunks
 
-# Named it RoBERTa to clarify that this is the model I've used in this project
 def roberta_predict_probabilities(texts):
     probabilities = []
     with torch.no_grad(): # Reduces overhead by avoiding graph building
@@ -38,7 +37,6 @@ def roberta_predict_probabilities(texts):
             probabilities.append(softmax(raw_scores))
     return np.vstack(probabilities)
 
-# Named it RoBERTa to clarify that this is the model I've used in this project
 def roberta_merge_subwords(tokens, contributions):
     merged = []
     current_word = ""

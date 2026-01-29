@@ -1,10 +1,10 @@
-import text_processing as tp
 import numpy as np
 import uuid
 from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from typing import List, Dict, Any
 from pydantic import BaseModel
+from app import text_processing as tp
 
 app = FastAPI()
 app.add_middleware(
