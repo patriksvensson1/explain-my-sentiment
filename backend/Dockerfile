@@ -2,6 +2,9 @@ FROM python:3.12
 
 WORKDIR /app
 
+ENV HF_HOME=/app/.cache/huggingface
+ENV TRANSFORMERS_CACHE=/app/.cache/huggingface
+
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
