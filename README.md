@@ -2,7 +2,7 @@
 Explain My Sentiment is a web app that analyzes the sentiment of text and shows which words contributed most to the prediction. It uses a RoBERTa sentiment model and SHAP-based token attribution, wrapped behind a simple upload-and-click workflow.
 
 ## Tech Stack  
-– **Backend**: Python, FastAPI, Hugging Face Transformers (RoBERTa), PyTorch, SHAP 
+– **Backend**: Python, FastAPI, Hugging Face Transformers (RoBERTa), PyTorch, SHAP  
 – **Frontend**: TypeScript, React, Tailwind CSS  
 – **Deployment**: Docker
 
